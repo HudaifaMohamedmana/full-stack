@@ -1,42 +1,82 @@
 #root {
-  max-width: 1280px;
+  width:90vw;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  border: solid;
 }
+.formMajor{
+  border: solid red;
+}
+form{
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
+input{
+  height: 100%;
+}
+.submit{
+  margin-left: 1em;
+  height: 100%;
+  padding: 0%;
+  width: 10vw;
+}
+.note{
+  
+    border:solid lightblue;
+    padding:1em;
+    margin:2em;
+    border-width:.2px;
+    /* height:22px;  */
+    border-radius:8px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.top{
+  border:solid lightblue;
+  border-radius:9px;
+  border-width:.2px;
+  padding:10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width:65%;
+  
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+.bottom{
+  display:flex;
+  justify-content: space-between;
+  width:20%;
+  align-items: center;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
+.editBtn, .deleteBtn {
+  border:solid ;
+  border-width:.2px;
+  padding:1.5vh;
+  height:15px;
+  border-radius:7px;
+  font-size:15px;
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
 }
-
-.card {
-  padding: 2em;
+.editBtn:hover{
+  border-width:.2px;
+  padding:2vh ;
+  color:lime;
 }
-
-.read-the-docs {
-  color: #888;
+.deleteBtn:hover {
+  border-width:.2px;
+  padding:2vh ;
+  color:red;
+}
+.noteTitle{
+  text-align:left;
+}
+.noteBody{
+  text-align:right;
 }
