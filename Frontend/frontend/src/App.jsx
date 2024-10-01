@@ -24,7 +24,37 @@ function App() {
       console.log(info.notes)
 
   }
-  const createNote = () => {};
+  const createNote = async (e) => {
+    e.preventDefault();
+    // stops default behavior of submit button
+    const res = await axios.post("http://localhost:3050/notes",createForm);
+    setNotes(() => [res.data.note, ...notes]);
+    // once state is updated, we no longer need it in inputs so we clear vv
+    setCreateForm(() => ({
+      title: "",
+      body: "",
+    }));
+  };
+  const updateCreateFormField = (e) => {
+    const { name, value } = e.target;
+    // take vals off inout
+    console.log({ name, value });
+
+    setCreateForm(() => ({
+      ...createForm,
+      [name]: value,
+    }));
+  };
+const toggleUpdate = async(note) => {
+  setUpDateForm({
+    
+    title: title,
+    body: body
+  })
+}
+
+
+  //--------------------------------------
   useEffect(()=>{
     fetchNotes()
   },[])
@@ -37,18 +67,18 @@ function App() {
           <input
             type="text"
             className="newFm"
-            name=""
-            value=""
+            name="title"
+            value={createForm.title}
             placeholder="Enter Title"
-            onChange=""
+            onChange={updateCreateFormField}
           />
           <input
             type="text"
             className="newFm"
-            name=""
-            value=""
+            name="body"
+            value={createForm.body}
             placeholder="Enter Body"
-            onChange=""
+            onChange={updateCreateFormField}
           />
           </div>
           <button className='submit' type="submit"> Note(+)</button>
